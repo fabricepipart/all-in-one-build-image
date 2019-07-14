@@ -11,7 +11,7 @@ script:
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker tag $REPO:$COMMIT $REPO:latest
+  - docker tag $REPO:$TRAVIS_COMMIT $REPO:latest
   - docker push $REPO:latest
-  - if [[ $TRAVIS_TAG = $TRAVIS_BRANCH ]]; then docker tag $REPO:$COMMIT $REPO:$TRAVIS_BRANCH && docker push $REPO:$TRAVIS_BRANCH; else true ; fi
+  - if [[ $TRAVIS_TAG = $TRAVIS_BRANCH ]]; then docker tag $REPO:$TRAVIS_COMMIT $REPO:$TRAVIS_BRANCH && docker push $REPO:$TRAVIS_BRANCH; else true ; fi
   - docker logout
