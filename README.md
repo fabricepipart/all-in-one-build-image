@@ -1,6 +1,7 @@
 # all-in-one-build-image
 
 [![Build Status](https://travis-ci.org/fabricepipart/all-in-one-build-image.svg?branch=master)](https://travis-ci.org/fabricepipart/all-in-one-build-image)
+[![](https://images.microbadger.com/badges/image/fabricepipart/all-in-one-build-image.svg)](https://hub.docker.com/r/fabricepipart/all-in-one-build-image/tags "Get your own image badge on microbadger.com")
 
 All my tools in one build image
 
