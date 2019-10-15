@@ -2,11 +2,11 @@ FROM quay.io/openshift/origin-jenkins-agent-base:v4.0
 
 # Labels consumed by Red Hat build service
 LABEL name="openshift3/jenkins-agent-maven-36-rhel7" \
-      version="3.11" \
-      architecture="x86_64" \
-      io.k8s.display-name="Jenkins Agent Maven" \
-      io.k8s.description="The jenkins agent maven image has the maven tools on top of the jenkins slave base image." \
-      io.openshift.tags="openshift,jenkins,agent,maven,python3,git"
+    version="3.11" \
+    architecture="x86_64" \
+    io.k8s.display-name="Jenkins Agent Maven" \
+    io.k8s.description="The jenkins agent maven image has the maven tools on top of the jenkins slave base image." \
+    io.openshift.tags="openshift,jenkins,agent,maven,python3,git"
 
 RUN chown -R 1001:0 $HOME && \
     chmod -R g+rw $HOME 
@@ -14,8 +14,8 @@ RUN chown -R 1001:0 $HOME && \
 ADD configure-agent /usr/local/bin/configure-agent
 
 # Maven
-RUN wget https://www-eu.apache.org/dist/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz && \
-    tar xvf apache-maven-3.6.0-bin.tar.gz -C /usr/lib/ && \
+RUN wget https://www-eu.apache.org/dist/maven/maven-3/3.6.2/binaries/apache-maven-3.6.2-bin.tar.gz && \
+    tar xvf apache-maven-3.6.2-bin.tar.gz -C /usr/lib/ && \
     mkdir -p /usr/lib/apache-maven-3.6.0/ref/repository && \
     chmod 777 -R /usr/lib/apache-maven-3.6.0/ref/repository
 COPY settings.xml /usr/lib/apache-maven-3.6.0/conf/settings.xml
