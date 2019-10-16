@@ -1,4 +1,4 @@
-FROM quay.io/openshift/origin-jenkins-agent-base:v4.0
+FROM quay.io/openshift/origin-jenkins-agent-base:4.3.0
 
 # Labels consumed by Red Hat build service
 LABEL name="openshift3/jenkins-agent-maven-36-rhel7" \
